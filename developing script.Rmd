@@ -182,12 +182,12 @@ This is the same method used for creating a clickable email link: `
 
 **Exercise `r n<-n+1; n`:**
 
-(@) Contact: (add some alt text and your email address as a hyperlink)  
+(@) Contact: (add some alt text and your email address as a hyperlink)
 
-(@) Go back to the Introduction section and make the link to rmarkdown active.  
+(@) Go back to the Introduction section and make the link to rmarkdown active.
 
-(@) We are going to be using data from the NHS Scotland Open Data platform. Create 
-some alt text and link it to opendata.nhs.scot 
+(@) We are going to be using data from the NHS Scotland Open Data platform. Create
+some alt text and link it to opendata.nhs.scot
 
 (@) Knit and check your links work.
 
@@ -255,10 +255,10 @@ format(Sys.time(), '%d %B %Y')` `` inline with the rest of your text.
 
 **Exercise `r n<-n+1; n`:**  
 
-(@) If you don't already have the package installed, run 
-`remotes::install_github("Public-Health-Scotland/phsopendata", upgrade = "never")` 
-in the console. This will install the PHS Open Data package, which we will use to 
-import some data.  
+(@) If you don't already have the package installed, run
+`remotes::install_github("Public-Health-Scotland/phsopendata", upgrade = "never")`
+in the console. This will install the PHS Open Data package, which we will use to
+import some data.
 
 (@) Create a code chunk, name it and paste the following code into the chunk.
 
@@ -287,17 +287,17 @@ include the data behind a chart, in a table.
 
 **Exercise `r n<-n+1; n`:**
 
-1. add `{.tabset}` to the *Monthly Attendances at A&E* level 2 header.  
-2. create a level 3 header, *Attendances at EDs*  
-3. paste the following code into a code chunk. Add some suitable commentary below 
-the code chunk  
+1. add `{.tabset}` to the *Monthly Attendances at A&E* level 2 header.
+2. create a level 3 header, *Attendances at EDs*
+3. paste the following code into a code chunk. Add some suitable commentary below
+the code chunk
 
 
-4. repeat with another level 3 header, titled *Attendances at MIUs*  
+4. repeat with another level 3 header, titled *Attendances at MIUs*
 
 
-5. If you want to make it look a bit snazzy, add a bit of flair to the tabsets by 
-adding `.tabset-fade` and/or `.tabset-pills` to `{.tabset}` (keep it all inside the 
+5. If you want to make it look a bit snazzy, add a bit of flair to the tabsets by
+adding `.tabset-fade` and/or `.tabset-pills` to `{.tabset}` (keep it all inside the
 curly brackets).
 
 # Housekeeping
@@ -306,22 +306,22 @@ By now the script is getting quite long, and can be tricky to navigate. If you'v
 been good at defining sections then you can toggle to show the document outline 
 on the right-hand side of the script pane. Other points of good practice:
 
-- load all the libraries you need in the first code chunk. (I haven't done that 
-in this document, as I wanted you to see which package is used in each example)  
+- load all the libraries you need in the first code chunk. (I haven't done that
+in this document, as I wanted you to see which package is used in each example)
 
-- similarly, load and wrangle the data early on in the script too, before you start 
-creating content. Then the code chunks within the main text can be kept sparse, 
-such as just calling a plot.  
+- similarly, load and wrangle the data early on in the script too, before you start
+creating content. Then the code chunks within the main text can be kept sparse,
+such as just calling a plot.
 
-- run each chunk in RStudio as you create it to check it works - it's easier to 
-troubleshoot this way, than following an error message created when trying to knit.  
+- run each chunk in RStudio as you create it to check it works - it's easier to
+troubleshoot this way, than following an error message created when trying to knit.
 
-- if there's a lot of processing to be done then create this in another R script 
-instead, and 'call' it into the markdown by using `source`.  
+- if there's a lot of processing to be done then create this in another R script
+instead, and 'call' it into the markdown by using `source`.
 
-- be very careful using filepaths - the 'start point' of filepaths can be different 
-when running a chunk locally than when knitting. The easiest way to get round that 
-is to use the package `here`, which always starts at the location of the project directory.  
+- be very careful using filepaths - the 'start point' of filepaths can be different
+when running a chunk locally than when knitting. The easiest way to get round that
+is to use the package `here`, which always starts at the location of the project directory.
 
 # Adding some interactivity
 
@@ -412,24 +412,46 @@ different than ggplot, but ultimately it gives you a lot more functionality.
 
 # What Next?
 
+## RStudio Visual Editor
+
+Newer versions of RStudio (v1.4 onwards) have a visual editor, which means you can
+focus more on the content of your document and less on how to code it. It won't work 
+with this script so let's see what happens with a fresh R Markdown script.  
+
+Go to File > New File > R Markdown... In the pop-up box give the file a name, add 
+an author and keep the output as HTML. Have a look at the script that is generated.
+You should recognise the different aspects of a markdown script: YAML, text, code chunks.  
+
+Now look at the top left corner, at the toolbar below the script tabs. This is 
+where you can switch between the Source and Visual editors.  
+
+In Visual Editor mode you can use the editor toolbar to format text, add images, 
+tables, links, code chunks, citations, footnotes etc. More details can be found in RStudio's 
+[github page](https://rstudio.github.io/visual-markdown-editing/). The [bookdown 
+package](https://bookdown.org) adds extra functionality such as cross-referencing.
+  
+
+
+## Taking it further
+
 This is only a brief introduction to R Markdown, there is so much more to explore! 
 The suggestions below are outwith the scope of this guide, and are only a tiny 
 fraction of what is possible.  
 
-* Automate the same report for multiple groups (e.g. ICSs, LAs, hospitals, ...). 
-These are done by defining the parameters. Chapter 15 in [R Markdown: the definitive guide](https://bookdown.org/yihui/rmarkdown/parameterized-reports.html) describes 
-this in more detail. This method can also be applied to other types of outputs, 
-such as pdf, Word or Powerpoint documents.  
+* Automate the same report for multiple groups (e.g. ICSs, LAs, hospitals, ...).
+These are done by defining the parameters. Chapter 15 in [R Markdown: the definitive guide](https://bookdown.org/yihui/rmarkdown/parameterized-reports.html) describes
+this in more detail. This method can also be applied to other types of outputs,
+such as pdf, Word or Powerpoint documents.
 
-* [Flexdashboard](https://rmarkdown.rstudio.com/flexdashboard/) is an extension 
-package to markdown that allows you to build dashboards in html. These are useful 
-to display data visualisations, and include other components such as data tables, 
-interactive maps, gauges, value boxes etc. It can be made up of multiple pages, 
-or you can control how analysis and its conclusions are unveiled through the use 
-of a storyboard.  
+* [Flexdashboard](https://rmarkdown.rstudio.com/flexdashboard/) is an extension
+package to markdown that allows you to build dashboards in html. These are useful
+to display data visualisations, and include other components such as data tables,
+interactive maps, gauges, value boxes etc. It can be made up of multiple pages,
+or you can control how analysis and its conclusions are unveiled through the use
+of a storyboard.
 
-* Further customise the appearance of the html document by adding CSS styles and 
-html formatting. For instance (look at the source code to see how this effect is created):  
+* Further customise the appearance of the html document by adding CSS styles and
+html formatting. For instance (look at the source code to see how this effect is created):
 
 <style>
 div.phsblu50 { background-color:#80bcea; border-radius: 5px; padding: 20px;}
