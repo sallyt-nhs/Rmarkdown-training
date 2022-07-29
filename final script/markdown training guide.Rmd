@@ -525,6 +525,28 @@ different than ggplot, but ultimately it gives you a lot more functionality.
 
 # What Next?
 
+## RStudio Visual Editor
+
+Newer versions of RStudio (v1.4 onwards) have a visual editor, which means you can
+focus more on the content of your document and less on how to code it. It won't work 
+with this script so let's see what happens with a fresh R Markdown script.  
+
+Go to File > New File > R Markdown... In the pop-up box give the file a name, add 
+an author and keep the output as HTML. Have a look at the script that is generated.
+You should recognise the different aspects of a markdown script: YAML, text, code chunks.  
+
+Now look at the top left corner, at the toolbar below the script tabs. This is 
+where you can switch between the Source and Visual editors.  
+
+In Visual Editor mode you can use the editor toolbar to format text, add images, 
+tables, links, code chunks, citations, footnotes etc. More details can be found in RStudio's 
+[github page](https://rstudio.github.io/visual-markdown-editing/). The [bookdown 
+package](https://bookdown.org) adds extra functionality such as cross-referencing.
+  
+
+
+## Taking it further
+
 This is only a brief introduction to R Markdown, there is so much more to explore! 
 The suggestions below are outwith the scope of this guide, and are only a tiny 
 fraction of what is possible.  
