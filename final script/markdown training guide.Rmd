@@ -42,14 +42,14 @@ will identify and install any missing packages that are required for this script
 #| eval: false
 #| echo: true
 
-## If a package is installed, it will be loaded. If any 
-## are not, the missing package(s) will be installed from CRAN
+# If a package is installed, it will be loaded. If any 
+# are not, the missing package(s) will be installed from CRAN
 
-## First specify the packages of interest
+# First specify the packages of interest
 packages = c("dplyr", "tidyr", "lubridate", "zoo",
              "ggplot2", "DT", "reactable", "plotly")
 
-## Now installs if required
+# Now installs if required
 package.check <- lapply(
   packages,
   FUN = function(x) {
@@ -244,7 +244,7 @@ end of the chunk. You also need to use curly brackets to declare which language 
 `r ''````{r}
 #| label: add-chunk-name 
 
-# insert R code here
+# insert R code here (without the # symbol)
 
 `r ''````
 
@@ -254,11 +254,13 @@ It's good practice to name your code chunks (each chunk needs a unique name),
 keep it short but descriptive of what it is doing. Don't use spaces, dots or 
 underscores in chunks - use "-" if you need to use a separator.
 
-Adding chunk options within the curly brackets can e.g. hide the code, only show 
-the results, evaluate the code or not (plus many more options). If you want the 
-same rules to apply to all code chunks you would include it in the global options. 
+Adding chunk options after the code language can e.g. hide the code, only show 
+the results, evaluate the code or not (plus many more options). Use the hashtag 
+and vertical line to declare each option. If you want the same rules to apply to 
+all code chunks you would include it in the global options. 
 Look at the very first code chunk in the script - `include: false` excludes the 
-code chunks from the output by default.  
+code chunks from the output by default. Be careful to include a space after the colon - 
+otherwise it won't knit, and the error message isn't helpful!  
 
 Use single backticks to run code inline with text. You still need to include `r` 
 but this time it doesn't need to be in curly brackets. For example, to print today's 
@@ -277,7 +279,7 @@ import some data.
 
 ```{r}
 #| label: import-data
-#| echo:true
+#| echo: true
 
 ## libraries
 library(dplyr)
@@ -462,8 +464,8 @@ beauty of rendering the markdown script to html is that we can! What follows are
 just a few examples of packages that can add some interactivity to your reports. 
 There aren't any exercises, but follow along with the script to see how to apply 
 them. In your script the following code chunks are currently set to not run when 
-you knit - delete the code `eval = FALSE` from each code chunk (or change it to 
-`TRUE`) so that the code does run from now on.   
+you knit - delete the code `eval: false` from each code chunk (or change it to 
+`true`) so that the code does run from now on.   
 
 ## DT (Datatable)
 
