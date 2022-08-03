@@ -11,9 +11,11 @@ output:
     
 ---
 
-```{r setup, include = FALSE}
+```{r}
+#| label: setup
+#| include: false
 
-# include = FALSE: ensures that code and results don't appear in the knitted document. 
+# include: false ensures that code and results don't appear in the knitted document. 
 # So when you knit the document this chunk will not appear.
 
 # This is a global option, so this will apply to all of the code chunks in the document
@@ -36,7 +38,9 @@ other (main) screen.
 Before we go any further, copy the code below into your console and run it. This 
 will identify and install any missing packages that are required for this script to run correctly.  
 
-``` {r, eval=FALSE, echo = TRUE}
+``` {r}
+#| eval: false
+#| echo: true
 
 ## If a package is installed, it will be loaded. If any 
 ## are not, the missing package(s) will be installed from CRAN
@@ -237,7 +241,8 @@ end of the chunk. You also need to use curly brackets to declare which language 
 
 
 ````markdown
-`r ''````{r add-chunk-name}
+`r ''````{r}
+#| label: add-chunk-name 
 
 # insert R code here
 
@@ -252,7 +257,7 @@ underscores in chunks - use "-" if you need to use a separator.
 Adding chunk options within the curly brackets can e.g. hide the code, only show 
 the results, evaluate the code or not (plus many more options). If you want the 
 same rules to apply to all code chunks you would include it in the global options. 
-Look at the very first code chunk in the script - `include = FALSE` excludes the 
+Look at the very first code chunk in the script - `include: false` excludes the 
 code chunks from the output by default.  
 
 Use single backticks to run code inline with text. You still need to include `r` 
@@ -270,7 +275,9 @@ import some data.
 (@) Create a code chunk, name it and paste the following code into the chunk.
 
 
-```{r import-data, echo = TRUE}
+```{r}
+#| label: import-data
+#| echo:true
 
 ## libraries
 library(dplyr)
@@ -318,7 +325,8 @@ many tabs do you want?) headers at the next level down, with a code chunk in eac
 
 ### Attendances at EDs
 
-```{r plot-ed}
+```{r}
+#| label: plot-ed
 
 library(ggplot2)
 
@@ -344,7 +352,8 @@ You can add commentary before the next section heading.
 
 ### Attendances at MIUs
 
-``` {r plot-miu}
+``` {r}
+#| label: plot-miu
 
 plot2 <-ggplot(monthly_ae_gp %>% filter(DepartmentType == "Minor Injury Unit or Other"), 
                aes(x = month_end, y = count, group = type, colour = type)) +
@@ -374,7 +383,10 @@ include the data behind a chart, in a table.
 3. paste the following code into a code chunk. Add some suitable commentary 
 below the code chunk  
 
-``` {r plot-ed-code, echo = TRUE, eval = FALSE}
+``` {r}
+#| label: plot-ed-code
+#| echo: true
+#| eval: false
 
 library(ggplot2)
 
@@ -397,7 +409,10 @@ plot1 <-ggplot(monthly_ae_gp %>% filter(DepartmentType == "Emergency Department"
 4. repeat with another level 3 header, titled *Attendances at MIUs*  
 
 
-```{r plot-miu-code, echo = TRUE, eval = FALSE}
+```{r}
+#| label: plot-miu-code
+#| echo: true
+#| eval: false
 
 plot2 <-ggplot(monthly_ae_gp %>% filter(DepartmentType == "Minor Injury Unit or Other"), 
                aes(x = month_end, y = count, group = type, colour = type)) +
@@ -457,7 +472,8 @@ customise it (add options for exporting the data, change how many rows are displ
 plus lots more). However, you can see it doesn't like the `yearmon` date format, 
 and displays it as a numeric. (There is probably a workaround...)
 
-```{r datatable}
+```{r}
+#| label: datatable
 
 library(DT)
 
@@ -473,7 +489,8 @@ datatable(monthly_ae %>%
 With reactable, you can group data without having to hard code it first, using 
 the built-in aggregate functions or define your own. Clicking on a grouped item will unroll it.   
 
-```{r reactable}
+```{r}
+#| label: reactable
 
 library(reactable)
 
@@ -499,7 +516,8 @@ of the day they are still just static plots. Plotly can bring them to life.  Hov
 over the lines will display data points, and you can zoom into a specific area, 
 download the plot, plus other options available through the buttons top-right of the plot.. 
 
-```{r plotly}
+```{r}
+#| label: plotly
 
 library(plotly)
 
