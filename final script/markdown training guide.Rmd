@@ -205,7 +205,7 @@ some alt text and link it to opendata.nhs.scot
 
 Your document should be looking more like this one, but it's still missing the 
 table of contents. We add that in the YAML header. While we are there, we will 
-change the theme. Choose from any of the [Bootswatch](https://bootswatch.com/3/) 
+change the theme. Choose from any of the [Bootswatch](https://bootswatch.com/) 
 free themes, or download other templates.  
 
 **Exercise `r n<-n+1; n`:** amend your YAML header as below. Note the indentation 
