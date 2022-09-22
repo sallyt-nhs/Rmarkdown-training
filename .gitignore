@@ -52,3 +52,5 @@ vignettes/*.pdf
 *.[fF][sS][tT]
 
 developing-script.html
+
+/Quarto
